@@ -5,7 +5,7 @@ jobs:
     runs-on: ubuntu-latest
     steps: 
       - name: unittest
-        run: python3 -m unittest atest_main_unit.py
+        run: python3 -m unittest test_main_unit.py
   pytest:
     needs: unittest
     runs-on: ubuntu-latest
