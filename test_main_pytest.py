@@ -1,6 +1,6 @@
 import pytest
 import logging
-import average as f
+import main as f
 
 #Создание логирования
 logger = logging.getLogger(__name__)

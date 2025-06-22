@@ -1,6 +1,6 @@
 import unittest
 import logging
-import average as f
+import main as f
 
 #Конфигурация логирования
 logger = logging.getLogger(__name__)

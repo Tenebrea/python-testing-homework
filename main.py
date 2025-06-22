@@ -14,6 +14,4 @@ def main():
     res = calculate_average(numbers) #Вычисление среднего значения
     show_result(res) #Вывод результата
 
-if __name__ == '__main__': # Запуск программы
-    main()
-    
+
