@@ -1,6 +1,11 @@
 name: tests
 on: push
 jobs:
+  checkout:
+      runs-on: ubuntu-latest
+      steps:
+        - name: checkout_repo
+          uses: actions/checkout@v3
   unittest:
     runs-on: ubuntu-latest
     steps: 
