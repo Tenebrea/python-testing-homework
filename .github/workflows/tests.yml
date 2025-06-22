@@ -1,21 +1,43 @@
 name: tests
 on: push
 jobs:
-  checkout:
-      runs-on: ubuntu-latest
-      steps:
-        - name: checkout_repo
-          uses: actions/checkout@v3
   unittest:
-    needs: checkout
+    needs: python
     runs-on: ubuntu-latest
     steps: 
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.12.8'
+          
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+      
       - name: unittest
         run: python3 -m unittest test_main_unit.py
+        
   pytest:
     needs: unittest
     runs-on: ubuntu-latest
     steps: 
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.12.8'
+          
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          
       - name: pytest
         run: pytest -o log_cli=true --log-level=INFO test_main_pytest.py
       
