@@ -2,7 +2,6 @@ name: tests
 on: push
 jobs:
   unittest:
-    needs: python
     runs-on: ubuntu-latest
     steps: 
       - name: Checkout repository
