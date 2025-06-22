@@ -5,11 +5,11 @@ jobs:
     runs-on: ubuntu-latest
     steps: 
       - name: unittest
-        run: python.exe -m unittest atest_main_unit.py
+        run: python3 -m unittest atest_main_unit.py
   pytest:
     needs: unittest
     runs-on: ubuntu-latest
     steps: 
       - name: pytest
-        run: ytest -o log_cli=true --log-level=INFO test_main_pytest.py
+        run: pytest -o log_cli=true --log-level=INFO test_main_pytest.py
       
